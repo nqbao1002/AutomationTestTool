@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+#  postgres:
+#    profiles:
+#      - postgres
+#      - all
+#    image: postgres:latest
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: generate-ai
+#      PGDATA: /data/postgres
+#    volumes:
+#      - ./postgres:/docker-entrypoint-initdb.d/
+#    ports:
+#      - "5432:5432"
+
+
+#docker-compose up --build
